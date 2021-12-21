@@ -7,6 +7,15 @@
     <title>Rock paper scissors</title>
 </head>
 <body>
-    
+    <script>
+        function computerPlay(){
+            const options = ["Rock", "Paper", "Scissors"];
+            let randNumber = Math.floor(Math.random()*3);
+            return options[randNumber];
+        }
+
+        let ans = computerPlay();
+        
+    </script>
 </body>
 </html>
