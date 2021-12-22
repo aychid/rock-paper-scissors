@@ -53,15 +53,15 @@
             //    return console.log( "Something went wrong")
 
             if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Scissors') || 
-                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Rock') ||
-                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Paper')) {
-                   return playerWins = true; 
+                    (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Rock') ||
+                    (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Paper')) {
+                return playerWins = true; 
             } 
             if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Paper') || 
-                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Scissors') ||
-                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Rock') ) {
-                   return computerWins = true;
-                }
+                    (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Scissors') ||
+                    (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Rock') ) {
+                return computerWins = true;
+            }
         }
         
         // Play 5 rounds 
