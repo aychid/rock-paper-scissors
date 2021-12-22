@@ -20,46 +20,58 @@
         }
 
         // Play a round  
-        function playerPlay(){
-            return prompt("Enter your choice")
+        // function playerPlay(){
+        //     return prompt("Enter your choice")
+        // }
 
-        }
+        // Player choice 
+        let playerChoice = () => prompt("Enter your choice")
 
-        // TODO instead of two different functions make playerSelection in an anonymous arrow function 
         function playRound(playerSelection, computerSelection){
 
-            if(playerSelection.toUpperCase() === "ROCK") {
-                if(computerSelection === "Scissors") {
-                    return playerWins = true;
+            // if(playerSelection.toUpperCase() === "ROCK") {
+            //     if(computerSelection === "Scissors") {
+            //         return playerWins = true;
+            //     }
+            //     if(computerSelection === "Paper") {
+            //         return computerWins = true;
+            //     }
+            // } else if(playerSelection.toUpperCase() === "PAPER"){
+            //     if(computerSelection === "Rock") {
+            //         return playerWins = true
+            //     }
+            //     if(computerSelection === "Scissors")
+            //         return computerWins = true;
+            // } else if(playerSelection.toUpperCase() === "SCISSORS") {
+            //     if(computerSelection === "Paper") {
+            //         return playerWins = true; 
+            //     }
+            //     if(computerSelection === "Rock"){
+            //         return computerWins = true;  
+            //     }
+            // } else  
+            //    return console.log( "Something went wrong")
+
+            if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Scissors') || 
+                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Rock') ||
+                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Paper')) {
+                   return playerWins = true; 
+            } 
+            if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Paper') || 
+                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Scissors') ||
+                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Rock') ) {
+                   return computerWins = true;
                 }
-                if(computerSelection === "Paper") {
-                    return computerWins = true;
-                }
-            } else if(playerSelection.toUpperCase() === "PAPER"){
-                if(computerSelection === "Rock") {
-                    return playerWins = true
-                }
-                if(computerSelection === "Scissors")
-                    return computerWins = true;
-            } else if(playerSelection.toUpperCase() === "SCISSORS") {
-                if(computerSelection === "Paper") {
-                    return playerWins = true; 
-                }
-                if(computerSelection === "Rock"){
-                    return computerWins = true;  
-                }
-            } else  
-               return console.log( "Something went wrong")
         }
         
-        // Play best of 5 game
+        // Play 5 rounds 
         function game(numberOfGames = 5){
             let playerScore = 0;
             let computerScore = 0;
 
             for(let i=0; i < numberOfGames; i++) {
                 // Initialize answers
-                let playerAns = playerPlay();
+                let playerAns = playerChoice();
                 let computerAns = computerPlay();
                 console.log(playerAns, computerAns)
 
@@ -67,10 +79,14 @@
                 playRound(playerAns, computerAns);
                 if(playerWins){
                     playerScore++;
+                    console.log("Player wins!")
                 } 
                 if (computerWins) {
                     computerScore++;
+                    console.log("Computer wins!")
                 } 
+                
+                // Reset the round winner 
                 playerWins = false; 
                 computerWins = false;
             }
