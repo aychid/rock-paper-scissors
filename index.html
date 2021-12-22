@@ -28,28 +28,39 @@
         // TODO instead of two different functions make playerSelection in an anonymous arrow function 
         function playRound(playerSelection, computerSelection){
 
-            if(playerSelection.toUpperCase() === "ROCK") {
-                if(computerSelection === "Scissors") {
-                    return playerWins = true;
+            // if(playerSelection.toUpperCase() === "ROCK") {
+            //     if(computerSelection === "Scissors") {
+            //         return playerWins = true;
+            //     }
+            //     if(computerSelection === "Paper") {
+            //         return computerWins = true;
+            //     }
+            // } else if(playerSelection.toUpperCase() === "PAPER"){
+            //     if(computerSelection === "Rock") {
+            //         return playerWins = true
+            //     }
+            //     if(computerSelection === "Scissors")
+            //         return computerWins = true;
+            // } else if(playerSelection.toUpperCase() === "SCISSORS") {
+            //     if(computerSelection === "Paper") {
+            //         return playerWins = true; 
+            //     }
+            //     if(computerSelection === "Rock"){
+            //         return computerWins = true;  
+            //     }
+            // } else  
+            //    return console.log( "Something went wrong")
+
+            if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Scissors') || 
+                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Rock') ||
+                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Paper')) {
+                   return playerWins = true; 
+            } 
+            if( (playerSelection.toUpperCase() === "ROCK" && computerSelection === 'Paper') || 
+                (playerSelection.toUpperCase() === "PAPER" && computerSelection === 'Scissors') ||
+                (playerSelection.toUpperCase() === "SCISSORS" && computerSelection === 'Rock') ) {
+                   return computerWins = true;
                 }
-                if(computerSelection === "Paper") {
-                    return computerWins = true;
-                }
-            } else if(playerSelection.toUpperCase() === "PAPER"){
-                if(computerSelection === "Rock") {
-                    return playerWins = true
-                }
-                if(computerSelection === "Scissors")
-                    return computerWins = true;
-            } else if(playerSelection.toUpperCase() === "SCISSORS") {
-                if(computerSelection === "Paper") {
-                    return playerWins = true; 
-                }
-                if(computerSelection === "Rock"){
-                    return computerWins = true;  
-                }
-            } else  
-               return console.log( "Something went wrong")
         }
         
         // Play best of 5 game
