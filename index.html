@@ -8,6 +8,10 @@
 </head>
 <body>
     <script>
+        // Global variables to decide who won a round 
+        let playerWins = false;
+        let computerWins = false;
+
         // Computer choice
         function computerPlay(){
             const options = ["Rock", "Paper", "Scissors"];
@@ -17,39 +21,62 @@
 
         // Play a round  
         function playerPlay(){
-            ans = prompt("Enter your choice")
-            return ans
+            return prompt("Enter your choice")
+
         }
 
         // TODO instead of two different functions make playerSelection in an anonymous arrow function 
         function playRound(playerSelection, computerSelection){
-            if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Scissors") {
-                return "You won with Rock!"
-            } else if(playerSelection.toUpperCase() === "PAPER" && computerSelection === "Rock"){
-                return "You won with Paper!"
-            } else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Paper"){
-                return "You won with Scissors!"
-            } else if (playerSelection.toUpperCase() === 'ROCK' && computerSelection === "Paper"){
-                return "You lost! Computer won with Paper"
-            } else if (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Scissors'){ 
-                return "You lost! Computer won with Scissors"
-            } else if (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Rock')  {
-                return "You lost! Computer won with Rock"
-            } else if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Rock") {
-                return "You both had Rock! Tie!" 
-            } else if(playerSelection.toUpperCase() === "PAPER" && computerSelection === "Paper") {
-                return "You both had Paper! Tie!"
-            } else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Scissors") {
-                return "You both had Scissors! Tie!"
-            }
-            else    
-                return "Something went wrong"
-        }
-        // Initialize selections
-        let computerAns = computerPlay();
-        let playerAns = playerPlay();
 
-        console.log(playRound(playerAns, computerAns));
+            if(playerSelection.toUpperCase() === "ROCK") {
+                if(computerSelection === "Scissors") {
+                    return playerWins = true;
+                }
+                if(computerSelection === "Paper") {
+                    return computerWins = true;
+                }
+            } else if(playerSelection.toUpperCase() === "PAPER"){
+                if(computerSelection === "Rock") {
+                    return playerWins = true
+                }
+                if(computerSelection === "Scissors")
+                    return computerWins = true;
+            } else if(playerSelection.toUpperCase() === "SCISSORS") {
+                if(computerSelection === "Paper") {
+                    return playerWins = true; 
+                }
+                if(computerSelection === "Rock"){
+                    return computerWins = true;  
+                }
+            } else  
+               return console.log( "Something went wrong")
+        }
+        
+        // Play best of 5 game
+        function game(numberOfGames = 5){
+            let playerScore = 0;
+            let computerScore = 0;
+
+            for(let i=0; i < numberOfGames; i++) {
+                // Initialize answers
+                let playerAns = playerPlay();
+                let computerAns = computerPlay();
+                console.log(playerAns, computerAns)
+
+                // Play single round
+                playRound(playerAns, computerAns);
+                if(playerWins){
+                    playerScore++;
+                } 
+                if (computerWins) {
+                    computerScore++;
+                } 
+                playerWins = false; 
+                computerWins = false;
+            }
+            return `${playerScore}, ${computerScore}` 
+        }
+        console.log(game());
     </script>
 </body>
 </html>
