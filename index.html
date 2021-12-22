@@ -14,17 +14,14 @@
             let randNumber = Math.floor(Math.random()*3);
             return options[randNumber];
         }
-        let computerSelection = computerPlay();
 
         // Play a round  
         function playerPlay(){
             ans = prompt("Enter your choice")
             return ans
         }
-        let playerSelection = playerPlay();
 
         // TODO instead of two different functions make playerSelection in an anonymous arrow function 
-        // TODO add cases of losing and tying to playRound
         function playRound(playerSelection, computerSelection){
             if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Scissors") {
                 return "You won with Rock!"
@@ -32,11 +29,27 @@
                 return "You won with Paper!"
             } else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Paper"){
                 return "You won with Scissors!"
-            } else
+            } else if (playerSelection.toUpperCase() === 'ROCK' && computerSelection === "Paper"){
+                return "You lost! Computer won with Paper"
+            } else if (playerSelection.toUpperCase() === 'PAPER' && computerSelection === 'Scissors'){ 
+                return "You lost! Computer won with Scissors"
+            } else if (playerSelection.toUpperCase() === 'SCISSORS' && computerSelection === 'Rock')  {
+                return "You lost! Computer won with Rock"
+            } else if(playerSelection.toUpperCase() === "ROCK" && computerSelection === "Rock") {
+                return "You both had Rock! Tie!" 
+            } else if(playerSelection.toUpperCase() === "PAPER" && computerSelection === "Paper") {
+                return "You both had Paper! Tie!"
+            } else if(playerSelection.toUpperCase() === "SCISSORS" && computerSelection === "Scissors") {
+                return "You both had Scissors! Tie!"
+            }
+            else    
                 return "Something went wrong"
         }
+        // Initialize selections
+        let computerAns = computerPlay();
+        let playerAns = playerPlay();
 
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(playRound(playerAns, computerAns));
     </script>
 </body>
 </html>
