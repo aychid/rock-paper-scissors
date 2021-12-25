@@ -1,0 +1,41 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-around;
+    margin: 50px;
+}
+
+button{
+    margin: 10px;
+}
+
+
+.ans-container{
+    display: flex;
+    justify-content: center;
+}
+
+.ans{
+    width: 400px;
+    height: 200px;
+    background-color: whitesmoke;
+    border: 4px black solid;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    padding: 25px;
+}
+
+.player-wins{
+    background-color: green;
+    
+}
+
+.computer-wins{
+    background-color: red;
+}
