@@ -24,14 +24,18 @@ button{
 }
 
 .ans{
+    display: flex;
     width: 400px;
     height: 200px;
     background-color: whitesmoke;
     border: 4px black solid;
+    border-radius: 10px;
     font-size: 34px;
     font-weight: bold;
     text-align: center;
     padding: 25px;
+    align-items: center;
+    justify-content: center;
 }
 
 .score{
