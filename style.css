@@ -11,13 +11,16 @@ body{
 }
 
 button{
+    border-radius: 3px;
     margin: 10px;
 }
 
 
 .ans-container{
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .ans{
@@ -31,11 +34,9 @@ button{
     padding: 25px;
 }
 
-.player-wins{
-    background-color: green;
-    
+.score{
+    border: 3px;
+    font-size: 30px;
+    margin: 20px;
 }
 
-.computer-wins{
-    background-color: red;
-}
