@@ -20,6 +20,10 @@ button{
     height: 100px;
 }
 
+button:hover{
+    transform: scale(1.2);
+}
+
 .ans-container{
     display: flex;
     flex-flow: column wrap;
