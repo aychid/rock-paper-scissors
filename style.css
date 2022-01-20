@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background-color: blanchedalmond;
 }
 
 .buttons{
@@ -11,10 +12,13 @@ body{
 }
 
 button{
-    border-radius: 3px;
+    border-radius: 10px;
+    padding:10px;   
     margin: 10px;
+    font-size: 18px;
+    width: 100px;
+    height: 100px;
 }
-
 
 .ans-container{
     display: flex;
@@ -25,8 +29,8 @@ button{
 
 .ans{
     display: flex;
-    width: 400px;
-    height: 200px;
+    width: 50%;
+    height: 40%;
     background-color: whitesmoke;
     border: 4px black solid;
     border-radius: 10px;
@@ -39,8 +43,24 @@ button{
 }
 
 .score{
-    border: 3px;
+    border: 4px;
     font-size: 30px;
     margin: 20px;
+    padding: 10px;
 }
 
+.rock{
+    background-color: saddlebrown;
+}
+
+.paper{
+    background-color: white;
+}
+
+.scissors{
+    background-color: slategray;
+}
+
+.new-game{
+    background-color: paleturquoise;
+}
